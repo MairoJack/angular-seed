@@ -16,14 +16,6 @@
             </fieldset>
             <fieldset>
                <div class="form-group">
-                  <label class="col-md-2 control-label">产品描述:</label>
-                  <div class="col-md-10">
-                     <textarea cols="5" name="description" placeholder="Short description.." class="form-control"></textarea>
-                  </div>
-               </div>
-            </fieldset>
-            <fieldset>
-               <div class="form-group">
                   <label class="col-md-2 control-label">原价:</label>
                   <div class="col-md-10">
                      <input type="number" name="oldPrice" placeholder="123.20" required="" ng-model="oldPrice" class="form-control" />
@@ -69,7 +61,7 @@
                </div>
             </fieldset>
             <fieldset>
-               <div class="form-group">
+               <div class="form-group">-
                   <label class="col-md-2 control-label">状态:</label>
                   <div class="col-md-10">
                      <select class="form-control">
@@ -106,14 +98,22 @@
          <uib-tab-heading>Meta Data</uib-tab-heading>
          <div>
             <fieldset>
-            <div class="form-group">
-               <label class="col-sm-2 control-label">产品详情</label>
-               <div class="col-sm-10">
-                  <!-- Wysiswyg editor-->
-                  <div text-angular="" ng-model="form.htmlContent" name="wysiswyg-editor" class="btn-group-small"></div>
+               <div class="form-group">
+                  <label class="col-md-2 control-label">产品描述:</label>
+                  <div class="col-md-10">
+                     <textarea cols="5" name="description" placeholder="Short description.." class="form-control"></textarea>
+                  </div>
                </div>
-            </div>
-         </fieldset>
+            </fieldset>
+            <fieldset>
+               <div class="form-group">
+                  <label class="col-sm-2 control-label">产品详情</label>
+                  <div class="col-sm-10">
+                     <!-- Wysiswyg editor-->
+                     <div text-angular="" ng-model="form.htmlContent" name="wysiswyg-editor" class="btn-group-small"></div>
+                  </div>
+               </div>
+            </fieldset>
          </div>
       </uib-tab>
       <uib-tab>
@@ -127,11 +127,7 @@
                   <h4 class="page-header mt0">Select files</h4>
                   <div ng-show="flc.uploader.isHTML5">
                      <!-- 3. nv-file-over uploader="link" over-class="className"-->
-                     <div nv-file-over="" uploader="flc.uploader" over-class="bg-info" class="box-placeholder my-drop-zone">Base drop zone</div>
-                     <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}"-->
-                     <div nv-file-drop="" uploader="flc.uploader" options="{ url: '/foo' }">
-                        <div nv-file-over="" uploader="flc.uploader" over-class="bg-purple" class="box-placeholder my-drop-zone">Another drop zone with its own settings</div>
-                     </div>
+                     <div nv-file-over="" uploader="flc.uploader" over-class="bg-info" class="box-placeholder my-drop-zone">将图片拖至此处</div>
                   </div>
                   <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}"-->
                   <hr/>
@@ -162,6 +158,7 @@
                            <tr ng-repeat="item in flc.uploader.queue">
                               <td>
                                  <strong>{{ item.file.name }}</strong>
+                                 <div ng-show="flc.uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
                               </td>
                               <td ng-show="flc.uploader.isHTML5" nowrap="">{{ item.file.size/1024/1024|number:2 }} MB</td>
                               <td ng-show="flc.uploader.isHTML5">
