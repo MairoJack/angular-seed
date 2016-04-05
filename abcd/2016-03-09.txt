@@ -1,0 +1,26 @@
+
+[info][2016-03-09 09:42:54][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[info][2016-03-09 09:43:15][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 11:18:37][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 11:18:59][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 11:24:21][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:44:16][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:45:03][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:46:25][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:46:38][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:46:50][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[debug][2016-03-09 13:47:01][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[error][2016-03-09 15:42:55][192.168.31.185] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
+
+[error][2016-03-09 16:17:18][192.168.31.185][bb.php][sendPostUrl] org.apache.http.impl.conn.PoolingHttpClientConnectionManager-releaseConnection] Connection [id: 0][route: {}->http://192.168.31.185:8080] can be kept alive indefinitely
