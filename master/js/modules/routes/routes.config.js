@@ -57,7 +57,7 @@
               url: '/product/:id',
               title: 'Product View',
               templateUrl: helper.basepath('product-view.html'),
-              resolve: helper.resolveFor('angular-i18n')
+              resolve: helper.resolveFor('angular-i18n','textAngular','angularFileUpload','filestyle')
           })
           .state('app.product-info', {
               url: '/product-info/:id',

@@ -103,154 +103,117 @@
          </div>
       </uib-tab>
       <uib-tab>
-         <uib-tab-heading>SEO Metadata</uib-tab-heading>
+         <uib-tab-heading>Meta Data</uib-tab-heading>
          <div>
             <fieldset>
-               <div class="form-group">
-                  <label class="col-md-2 control-label">Title</label>
-                  <div class="col-md-10">
-                     <input type="text" placeholder="Brief description.." class="form-control" />
-                  </div>
+            <div class="form-group">
+               <label class="col-sm-2 control-label">产品详情</label>
+               <div class="col-sm-10">
+                  <!-- Wysiswyg editor-->
+                  <div text-angular="" ng-model="form.htmlContent" name="wysiswyg-editor" class="btn-group-small"></div>
                </div>
-            </fieldset>
-            <fieldset>
-               <div class="form-group">
-                  <label class="col-md-2 control-label">Description</label>
-                  <div class="col-md-10">
-                     <textarea rows="5" placeholder="Max 255 characters..." class="form-control"></textarea>
-                  </div>
-               </div>
-            </fieldset>
-            <fieldset>
-               <div class="form-group">
-                  <label class="col-md-2 control-label">Keywords</label>
-                  <div class="col-md-10">
-                     <textarea rows="5" placeholder="Max 1000 characters..." class="form-control"></textarea>
-                  </div>
-               </div>
-            </fieldset>
+            </div>
+         </fieldset>
          </div>
       </uib-tab>
       <uib-tab>
          <uib-tab-heading>Pictures</uib-tab-heading>
-         <div>
-            <div class="row mb-lg">
-               <div class="col-xs-3">
-                  <strong>Preview</strong>
-               </div>
-               <div class="col-xs-9">
-                  <strong>Details</strong>
-               </div>
-            </div>
-            <div class="row mb-lg pb-lg bb">
-               <div class="col-xs-6 col-sm-3">
-                  <a href="#" title="Product 1">
-                     <img src="app/img/bg7.jpg" alt="Product 1" class="img-responsive" />
-                  </a>
-               </div>
-               <div class="col-xs-6 col-sm-9">
-                  <fieldset>
-                     <div class="form-group">
-                        <input type="text" placeholder="Brief description.." class="form-control" />
+         <div ng-controller="FileUploadController as flc" nv-file-drop="" uploader="flc.uploader" filters="queueLimit, customFilter">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-3">
+            <div class="panel">
+               <div class="panel-body">
+                  <h4 class="page-header mt0">Select files</h4>
+                  <div ng-show="flc.uploader.isHTML5">
+                     <!-- 3. nv-file-over uploader="link" over-class="className"-->
+                     <div nv-file-over="" uploader="flc.uploader" over-class="bg-info" class="box-placeholder my-drop-zone">Base drop zone</div>
+                     <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}"-->
+                     <div nv-file-drop="" uploader="flc.uploader" options="{ url: '/foo' }">
+                        <div nv-file-over="" uploader="flc.uploader" over-class="bg-purple" class="box-placeholder my-drop-zone">Another drop zone with its own settings</div>
                      </div>
-                  </fieldset>
-                  <p>
-                     <strong>Picture type</strong>
-                  </p>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod1-pic" value="option1" checked="" />
-                        <span></span>Primary</label>
                   </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod1-pic" value="option2" />
-                        <span></span>Thumbnail</label>
-                  </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod1-pic" value="option3" />
-                        <span></span>Gallery</label>
-                  </div>
-                  <div class="text-right">
-                     <button type="button" class="btn btn-sm btn-danger">
-                        <em class="fa fa-times-circle fa-fw"></em>Remove</button>
-                  </div>
-               </div>
-            </div>
-            <div class="row mb-lg pb-lg bb">
-               <div class="col-xs-6 col-sm-3">
-                  <a href="#" title="Product 2">
-                     <img src="app/img/bg8.jpg" alt="Product 1" class="img-responsive" />
-                  </a>
-               </div>
-               <div class="col-xs-6 col-sm-9">
-                  <fieldset>
-                     <div class="form-group">
-                        <input type="text" placeholder="Brief description.." class="form-control" />
-                     </div>
-                  </fieldset>
-                  <p>
-                     <strong>Picture type</strong>
-                  </p>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod2-pic" value="option1" checked="" />
-                        <span></span>Primary</label>
-                  </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod2-pic" value="option2" />
-                        <span></span>Thumbnail</label>
-                  </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod2-pic" value="option3" />
-                        <span></span>Gallery</label>
-                  </div>
-                  <div class="text-right">
-                     <button type="button" class="btn btn-sm btn-danger">
-                        <em class="fa fa-times-circle fa-fw"></em>Remove</button>
-                  </div>
-               </div>
-            </div>
-            <div class="row mb-lg pb-lg">
-               <div class="col-xs-6 col-sm-3">
-                  <a href="#" title="Product 3">
-                     <img src="app/img/bg10.jpg" alt="Product 1" class="img-responsive" />
-                  </a>
-               </div>
-               <div class="col-xs-6 col-sm-9">
-                  <fieldset>
-                     <div class="form-group">
-                        <input type="text" placeholder="Brief description.." class="form-control" />
-                     </div>
-                  </fieldset>
-                  <p>
-                     <strong>Picture type</strong>
-                  </p>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod3-pic" value="option1" checked="" />
-                        <span></span>Primary</label>
-                  </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod3-pic" value="option2" />
-                        <span></span>Thumbnail</label>
-                  </div>
-                  <div class="radio c-radio c-radio-nofont">
-                     <label>
-                        <input type="radio" name="prod3-pic" value="option3" />
-                        <span></span>Gallery</label>
-                  </div>
-                  <div class="text-right">
-                     <button type="button" class="btn btn-sm btn-danger">
-                        <em class="fa fa-times-circle fa-fw"></em>Remove</button>
-                  </div>
+                  <!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}"-->
+                  <hr/>
+                  <input filestyle="" type="file" data-button-text="Multiple" data-class-button="btn btn-default" data-class-input="form-control inline" nv-file-select="" uploader="flc.uploader" multiple="" class="form-control" />
+                  <br/>
+                  <input filestyle="" type="file" data-button-text="Single" data-class-button="btn btn-default" data-classinput="form-control inline" nv-file-select="" uploader="flc.uploader" class="form-control" />
                </div>
             </div>
          </div>
+         <div style="margin-bottom: 40px" class="col-md-9">
+            <div class="panel">
+               <div class="panel-body">
+                  <p ng-if="flc.uploader.queue.length" class="pull-right label label-info">Queue length: {{ flc.uploader.queue.length }}</p>
+                  <h4 class="page-header mt0">Upload queue</h4>
+                  <p ng-if="!flc.uploader.queue.length" class="lead text-center">No files in queue. Start adding some..</p>
+                  <div ng-if="flc.uploader.queue.length">
+                     <table ng-if="flc.uploader.queue.length" class="table">
+                        <thead>
+                           <tr>
+                              <th width="50%">Name</th>
+                              <th ng-show="flc.uploader.isHTML5">Size</th>
+                              <th ng-show="flc.uploader.isHTML5">Progress</th>
+                              <th>Status</th>
+                              <th>Actions</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr ng-repeat="item in flc.uploader.queue">
+                              <td>
+                                 <strong>{{ item.file.name }}</strong>
+                              </td>
+                              <td ng-show="flc.uploader.isHTML5" nowrap="">{{ item.file.size/1024/1024|number:2 }} MB</td>
+                              <td ng-show="flc.uploader.isHTML5">
+                                 <div style="margin-bottom: 0;" class="progress progress-xs">
+                                    <div role="progressbar" ng-style="{ 'width': item.progress + '%' }" class="progress-bar"></div>
+                                 </div>
+                              </td>
+                              <td class="text-center">
+                                 <span ng-show="item.isSuccess">
+                                    <em class="fa fa-check fa-fw"></em>
+                                 </span>
+                                 <span ng-show="item.isCancel">
+                                    <em class="fa fa-ban-circle fa-fw"></em>
+                                 </span>
+                                 <span ng-show="item.isError">
+                                    <em class="fa fa-times fa-fw"></em>
+                                 </span>
+                              </td>
+                              <td nowrap="">
+                                 <button type="button" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess" class="btn btn-info btn-xs">
+                                    <span class="icon-cloud-upload mr"></span>Upload</button>
+                                 <button type="button" ng-click="item.cancel()" ng-disabled="!item.isUploading" class="btn btn-warning btn-xs">
+                                    <span class="icon-close mr"></span>Cancel</button>
+                                 <button type="button" ng-click="item.remove()" class="btn btn-danger btn-xs">
+                                    <span class="icon-trash mr"></span>Remove</button>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="panel">
+               <div class="panel-body">
+                  <div>
+                     <p>Queue progress:</p>
+                     <div style="" class="progress progress-xs">
+                        <div role="progressbar" ng-style="{ 'width': form.uploader.progress + '%' }" class="progress-bar"></div>
+                     </div>
+                  </div>
+                  <button type="button" ng-click="form.uploader.uploadAll()" ng-disabled="!form.uploader.getNotUploadedItems().length" class="btn btn-info btn-s">
+                     <span class="icon-cloud-upload mr"></span>Upload all</button>
+                  <button type="button" ng-click="form.uploader.cancelAll()" ng-disabled="!form.uploader.isUploading" class="btn btn-warning btn-s">
+                     <span class="icon-close mr"></span>Cancel all</button>
+                  <button type="button" ng-click="form.uploader.clearQueue()" ng-disabled="!form.uploader.queue.length" class="btn btn-danger btn-s">
+                     <span class="icon-trash mr"></span>Remove all</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
       </uib-tab>
    </uib-tabset>
 </form>

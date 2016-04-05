@@ -319,14 +319,26 @@
                                    'vendor/Flot/jquery.flot.pie.js',
                                    'vendor/Flot/jquery.flot.time.js',
                                    'vendor/Flot/jquery.flot.categories.js',
-                                   'vendor/flot-spline/js/jquery.flot.spline.min.js']
+                                   'vendor/flot-spline/js/jquery.flot.spline.min.js'],
+            'filestyle':          ['vendor/bootstrap-filestyle/src/bootstrap-filestyle.js']
           },
           // Angular based script (use the right module name)
           modules: [
             {name: 'datatables',         files: ['vendor/datatables/media/css/jquery.dataTables.css',
                                                  'vendor/datatables/media/js/jquery.dataTables.js',
                                                  'vendor/angular-datatables/dist/angular-datatables.js'], serie: true},
-            {name: 'angular-i18n',       files: ['vendor/angular-i18n/angular-locale_zh.js'], serie: true}
+            {name: 'angular-i18n',       files: ['vendor/angular-i18n/angular-locale_zh.js'], serie: true},
+            {name: 'textAngular',        files: ['vendor/textAngular/dist/textAngular.css',
+                                                 'vendor/textAngular/dist/textAngular-rangy.min.js',
+                                                 'vendor/textAngular/dist/textAngular-sanitize.js',
+                                                 'vendor/textAngular/src/globals.js',
+                                                 'vendor/textAngular/src/factories.js',
+                                                 'vendor/textAngular/src/DOM.js',
+                                                  'vendor/textAngular/src/validators.js',
+                                                 'vendor/textAngular/src/taBind.js',
+                                                 'vendor/textAngular/src/main.js',
+                                                 'vendor/textAngular/dist/textAngularSetup.js' ], serie: true},
+            {name: 'angularFileUpload',  files: ['vendor/angular-file-upload/angular-file-upload.js']},
           ]
         })
         ;
@@ -722,7 +734,7 @@
               url: '/product/:id',
               title: 'Product View',
               templateUrl: helper.basepath('product-view.html'),
-              resolve: helper.resolveFor('angular-i18n')
+              resolve: helper.resolveFor('angular-i18n','textAngular','angularFileUpload','filestyle')
           })
           .state('app.product-info', {
               url: '/product-info/:id',
@@ -2042,6 +2054,37 @@
     }
 })();
 /**=========================================================
+ * Module: filestyle.js
+ * Initializes the fielstyle plugin
+ =========================================================*/
+
+(function() {
+    'use strict';
+
+    angular
+        .module('app.forms')
+        .directive('filestyle', filestyle);
+
+    function filestyle () {
+        var directive = {
+            link: link,
+            restrict: 'A'
+        };
+        return directive;
+
+        function link(scope, element) {
+          var options = element.data();
+          
+          // old usage support
+          options.classInput = element.data('classinput') || options.classInput;
+          
+          element.filestyle(options);
+        }
+    }
+
+})();
+
+/**=========================================================
  * Module: FormValidationController
  * Input validation with UI Validate
  =========================================================*/
@@ -2086,6 +2129,80 @@
               return false;
             }
           };
+        }
+    }
+})();
+
+/**=========================================================
+ * Module: upload.js
+ =========================================================*/
+
+(function() {
+    'use strict';
+
+    angular
+        .module('app.forms')
+        .controller('FileUploadController', FileUploadController);
+
+    FileUploadController.$inject = ['FileUploader'];
+    function FileUploadController(FileUploader) {
+        var vm = this;
+
+        activate();
+
+        ////////////////
+
+        function activate() {
+          var uploader = vm.uploader = new FileUploader({
+              //url: 'server/upload.php'
+          });
+
+          // FILTERS
+
+          uploader.filters.push({
+              name: 'customFilter',
+              fn: function(/*item, options*/) {
+                  return this.queue.length < 10;
+              }
+          });
+
+          // CALLBACKS
+
+          uploader.onWhenAddingFileFailed = function(item /*{File|FileLikeObject}*/, filter, options) {
+              console.info('onWhenAddingFileFailed', item, filter, options);
+          };
+          uploader.onAfterAddingFile = function(fileItem) {
+              console.info('onAfterAddingFile', fileItem);
+          };
+          uploader.onAfterAddingAll = function(addedFileItems) {
+              console.info('onAfterAddingAll', addedFileItems);
+          };
+          uploader.onBeforeUploadItem = function(item) {
+              console.info('onBeforeUploadItem', item);
+          };
+          uploader.onProgressItem = function(fileItem, progress) {
+              console.info('onProgressItem', fileItem, progress);
+          };
+          uploader.onProgressAll = function(progress) {
+              console.info('onProgressAll', progress);
+          };
+          uploader.onSuccessItem = function(fileItem, response, status, headers) {
+              console.info('onSuccessItem', fileItem, response, status, headers);
+          };
+          uploader.onErrorItem = function(fileItem, response, status, headers) {
+              console.info('onErrorItem', fileItem, response, status, headers);
+          };
+          uploader.onCancelItem = function(fileItem, response, status, headers) {
+              console.info('onCancelItem', fileItem, response, status, headers);
+          };
+          uploader.onCompleteItem = function(fileItem, response, status, headers) {
+              console.info('onCompleteItem', fileItem, response, status, headers);
+          };
+          uploader.onCompleteAll = function() {
+              console.info('onCompleteAll');
+          };
+
+          console.info('uploader', uploader);
         }
     }
 })();

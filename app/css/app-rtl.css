@@ -6192,6 +6192,27 @@ label + .form-control + .parsley-errors-list + .form-control-feedback {
 }
 
 /* ========================================================================
+   Component: placeholder.less
+ ========================================================================== */
+
+.box-placeholder {
+  margin-bottom: 15px;
+  padding: 20px;
+  border: 1px dashed #dddddd;
+  background: #fafafa;
+  color: #444444;
+}
+
+.box-placeholder > :last-child {
+  margin-bottom: 0;
+}
+
+.box-placeholder-lg {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* ========================================================================
    Component: utils.less
  ========================================================================== */
 

@@ -15,14 +15,26 @@
                                    'vendor/Flot/jquery.flot.pie.js',
                                    'vendor/Flot/jquery.flot.time.js',
                                    'vendor/Flot/jquery.flot.categories.js',
-                                   'vendor/flot-spline/js/jquery.flot.spline.min.js']
+                                   'vendor/flot-spline/js/jquery.flot.spline.min.js'],
+            'filestyle':          ['vendor/bootstrap-filestyle/src/bootstrap-filestyle.js']
           },
           // Angular based script (use the right module name)
           modules: [
             {name: 'datatables',         files: ['vendor/datatables/media/css/jquery.dataTables.css',
                                                  'vendor/datatables/media/js/jquery.dataTables.js',
                                                  'vendor/angular-datatables/dist/angular-datatables.js'], serie: true},
-            {name: 'angular-i18n',       files: ['vendor/angular-i18n/angular-locale_zh.js'], serie: true}
+            {name: 'angular-i18n',       files: ['vendor/angular-i18n/angular-locale_zh.js'], serie: true},
+            {name: 'textAngular',        files: ['vendor/textAngular/dist/textAngular.css',
+                                                 'vendor/textAngular/dist/textAngular-rangy.min.js',
+                                                 'vendor/textAngular/dist/textAngular-sanitize.js',
+                                                 'vendor/textAngular/src/globals.js',
+                                                 'vendor/textAngular/src/factories.js',
+                                                 'vendor/textAngular/src/DOM.js',
+                                                  'vendor/textAngular/src/validators.js',
+                                                 'vendor/textAngular/src/taBind.js',
+                                                 'vendor/textAngular/src/main.js',
+                                                 'vendor/textAngular/dist/textAngularSetup.js' ], serie: true},
+            {name: 'angularFileUpload',  files: ['vendor/angular-file-upload/angular-file-upload.js']},
           ]
         })
         ;
