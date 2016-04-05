@@ -1,0 +1,49 @@
+[
+  {
+    "text": "Menu Heading",
+    "heading": "true",
+    "translate": "sidebar.heading.HEADER"
+  },
+  {
+    "text": "Dashboard",
+    "sref": "app.dashboard",
+    "icon": "fa fa-file-o",
+    "translate": "Dashboard"
+  },
+  {
+    "text": "电子商务",
+    "sref": "#",
+    "icon": "icon-basket-loaded",
+    "submenu": [
+      { "text": "订单列表", 
+        "sref": "app.order", 
+        "translate": "订单列表" 
+      },
+      { "text": "订单详情", 
+        "sref": "app.order", 
+        "translate": "订单详情" 
+      },
+      { "text": "产品列表", 
+        "sref": "app.products", 
+        "translate": "产品列表" 
+      },
+      { "text": "产品编辑", 
+        "sref": "app.product-view", 
+        "translate": "产品编辑" 
+      }  
+    ],
+    "translate": "电子商务"
+  },
+  {
+    "text": "Menu",
+    "sref": "#",
+    "icon": "icon-folder",
+    "submenu": [
+      { "text": "Sub Menu", 
+        "sref": "app.submenu", 
+        "translate": "sidebar.nav.menu.SUBMENU" 
+      }    
+    ],
+    "translate": "sidebar.nav.menu.MENU"
+  }
+]

@@ -1,0 +1,28 @@
+<h3>Products</h3>
+<div class="table-responsive b0" ng-controller="ProductController as product">
+   <table datatable="ng" class="row-border hover" dt-options="product.dtOptions">
+      <thead>
+         <tr>
+            <th>Person ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>操作</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr ng-repeat="list in product.list">
+            <td>{{ list.id }}</td>
+            <td>{{ list.firstName }}</td>
+            <td>{{ list.lastName }}</td>
+            <td>
+               <button type="button" ui-sref="app.product-info({id:list.id})" class="btn btn-sm btn-success">
+                  <em class="fa fa-info"></em>
+               </button>
+               <button type="button" ng-click="" class="btn btn-sm btn-danger">
+                  <em class="fa fa-trash-o"></em>
+               </button>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
