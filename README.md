@@ -1,2 +1,2 @@
 # lawliet
-Hello
+This is a seed project
