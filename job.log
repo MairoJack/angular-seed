@@ -1,0 +1,16 @@
+[INFO][16/03/29 09:20:55.849][org.springframework.context.support.AbstractApplicationContext-prepareRefresh] -Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@3d82c5f3: startup date [Tue Mar 29 09:20:55 CST 2016]; root of context hierarchy
+[INFO][16/03/29 09:20:56.210][org.springframework.beans.factory.xml.XmlBeanDefinitionReader-loadBeanDefinitions] -Loading XML bean definitions from class path resource [spring-mybatis.xml]
+[INFO][16/03/29 09:20:57.209][org.springframework.beans.factory.xml.XmlBeanDefinitionReader-loadBeanDefinitions] -Loading XML bean definitions from class path resource [spring-quartz.xml]
+[INFO][16/03/29 09:20:57.685][org.springframework.jdbc.datasource.DriverManagerDataSource-setDriverClassName] -Loaded JDBC driver: com.mysql.jdbc.Driver
+[INFO][16/03/29 09:20:58.272][org.springframework.scheduling.quartz.SchedulerAccessor-<init>] -Spring's Quartz 1.x support is deprecated - please upgrade to Quartz 2.0+
+[INFO][16/03/29 09:20:58.515][org.quartz.core.SchedulerSignalerImpl-<init>] -Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[INFO][16/03/29 09:20:58.515][org.quartz.core.QuartzScheduler-<init>] -Quartz Scheduler v.1.6.1 created.
+[INFO][16/03/29 09:20:58.517][org.quartz.simpl.RAMJobStore-initialize] -RAMJobStore initialized.
+[INFO][16/03/29 09:20:58.517][org.quartz.impl.StdSchedulerFactory-instantiate] -Quartz scheduler 'startQuartz' initialized from an externally provided properties instance.
+[INFO][16/03/29 09:20:58.517][org.quartz.impl.StdSchedulerFactory-instantiate] -Quartz scheduler version: 1.6.1
+[INFO][16/03/29 09:20:58.519][org.quartz.core.QuartzScheduler-setJobFactory] -JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@179ece50
+[INFO][16/03/29 09:20:58.549][org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup-start] -Starting beans in phase 2147483647
+[INFO][16/03/29 09:20:58.549][org.springframework.scheduling.quartz.SchedulerFactoryBean-startScheduler] -Starting Quartz Scheduler now
+[INFO][16/03/29 09:20:58.549][org.quartz.core.QuartzScheduler-start] -Scheduler startQuartz_$_NON_CLUSTERED started.
+[INFO][16/03/29 09:21:00.015][com.pcjr.job.task.Task-start] -任务开始执行--2016-03-29 09:21:00
+[INFO][16/03/29 09:21:01.398][com.pcjr.job.task.Task-start] -任务执行完毕--2016-03-29 09:21:01
